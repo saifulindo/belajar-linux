@@ -3,8 +3,8 @@ title: Belajar Linux
 email: 
 description: > # this means to ignore newlines until "baseurl:"
   Belajar Terminal Linux pada materi sistem operasi berbasis text.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://saifulindo.koding.io" # the base hostname & protocol for your site
+baseurl: "/belajar-linux" # the subpath of your site, e.g. /blog/
+url: "http://saifulindo.github.io" # the base hostname & protocol for your site
 twitter_username: saifulindo
 github_username: saifulindo
 

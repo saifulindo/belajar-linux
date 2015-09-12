@@ -24,4 +24,4 @@ Parameter `-F` tersebut adalah flags direktori dengan sebuah slash, untuk memban
 
 Untuk menampilkan file hidden beserta dengan normal file dan direktori, gunakan parameter `-a`. Gambar ini menunjukkan contoh penggunaan parameter `-a` dengan perintah `ls`.
 
-![]({{site.baseurl}}\\resources\img\ls-a.png)
+![]({{site.baseurl}}\resources\img\ls-a.png)

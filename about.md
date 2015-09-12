@@ -3,8 +3,11 @@ layout: page
 title: About
 permalink: /about/
 ---
-*Arctic Fox* is a lightweight and customisable Jekyll Theme.
+Muhammad Syaiful’s a teacher and active in the community, interested in the programming language of Ruby, Python, and C++.
 
-* Author: Camille Diez
-* Github: http://github.com/diezcami
-* Portfolio: http://diezcami.github.io
+Belajar Linux ini lebih ke arah bagaimana mengoperasikan command line.
+
+* Author: M. Saiful Mukharom
+* Github: http://github.com/saifulindo
+* Portfolio: http://saifulindo.github.io/about/
+* LICENSE Blog: https://github.com/diezcami/arctic-fox-theme/

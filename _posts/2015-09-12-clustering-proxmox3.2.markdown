@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clustering 2 Node with ProxmoxVE-v3.4"
-date: 2015-09-11
+date: 2015-09-10
 categories:
 ---
 
@@ -15,7 +15,7 @@ cd /etc/pve/nodes/
 mv pve-lama pve-baru
 reboot
 ```
-#### insert antar hostname:
+#### Insert antar Hostname:
 
 ```
 nano /etc/hosts

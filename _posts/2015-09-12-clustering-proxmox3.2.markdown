@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "Documentation Clustering 2 Node with ProxmoxVE3.4"
+title: "Clustering 2 Node with ProxmoxVE-v3.4"
 date: 2015-09-11
 categories:
 ---
 
+## Documentation
 #### Mengganti Hostname
 
 ```

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Basic Bash Shell Command</title>
+  <meta name="description" content="The ShellShell GNU/Linux adalah utilitas interaktif khusus. ini menyediakan cara bagi pengguna untuk memulai program, mengelola file pada filesystem, dan men...">
+
+  <link rel="stylesheet" href="/belajar-linux/css/main.css">
+  <link rel="canonical" href="http://saifulindo.github.io/belajar-linux/2015/09/11/perintah-dasar.html">
+  <link rel="alternate" type="application/rss+xml" title="Belajar Linux" href="http://saifulindo.github.io/belajar-linux/feed.xml" />
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <div class="site-header">
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <i class="fa fa-navicon fa-lg"></i>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="/belajar-linux/">Home</a>
+        
+          
+          <a class="page-link" href="/belajar-linux/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+     <h1 class="post-title">Basic Bash Shell Command</h1>
+     <p class="post-meta">Posted on Sep 11, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <h3>The Shell</h3>
+
+<p>Shell GNU/Linux adalah utilitas interaktif khusus. ini menyediakan cara bagi pengguna untuk memulai program, mengelola file pada filesystem, dan mengelola proses yang berjalan pada sistem Linux. Inti dari shell adalah command prompt. Command prompt adalah bagian interaktif shell. Hal ini memungkinkan Anda untuk memasukkan perintah teks, dan kemudian menterjemahkan perintah dan mengeksekusi mereka dalam kernel.</p>
+
+<p>Shell berisi seperangkat perintah internal yang Anda gunakan untuk mengendalikan hal-hal seperti menyalin file, memindahkan file, mengubah nama file, menampilkan program-program yang sedang berjalan pada sistem, dan menghentikan program berjalan pada sistem. Selain perintah internal, shell juga memungkinkan Anda untuk memasukkan nama dari sebuah program pada command prompt.</p>
+
+<h3>Basic Listing</h3>
+
+<p>Perintah <code>ls</code> pada bentuk paling dasar menampilkan file dan direktori yang terletak di direktori saat ini:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">saifulindo: ~ $ ls
+Applications  Backup  Documents  README.md  Web  tmp
+</code></pre></div>
+<p>Perhatikan bahwa perintah <code>ls</code> menghasilkan daftar urutan abjad (di kolom daripada baris). </p>
+
+<p>Anda dapat menggunakan parameter -F dengan perintah <code>ls</code> membedakan antara file dan direktori. Menggunakan parameter -F menghasilkan output berikut:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">saifulindo: ~ $ ls -F
+Applications/  Backup/  Documents/  README.md  Web/  tmp/
+</code></pre></div>
+<p>Parameter <code>-F</code> tersebut adalah flags direktori dengan sebuah slash, untuk membantu mengidentifikasi mereka dalam daftar. Demikian pula, itu flags file yang dapat dieksekusi (seperti direktori <code>Web</code> di atas) dengan tanda garing, untuk membantu Anda lebih mudah menemukan berkas yang dapat dijalankan pada sistem.Di Linux, file tersembunyi adalah file dengan nama file yang dimulai dengan periode, File-file ini tidak muncul dalam default daftar <code>ls</code>(dengan demikian, mereka disebut hidden).</p>
+
+<p>Untuk menampilkan file hidden beserta dengan normal file dan direktori, gunakan parameter <code>-a</code>. Gambar ini menunjukkan contoh penggunaan parameter <code>-a</code> dengan perintah <code>ls</code>.</p>
+
+<p><img src="/belajar-linux/resources/img/ls-a.png" alt="ls-a"></p>
+
+<p>Beberapa paramater lain seperti <code>ls -F -R</code>, <code>ls -l</code>, Anda dapat menggunakan lebih dari satu parameter pada satu waktu jika Anda ingin. Tanda parameter  ganda harus tercantum secara terpisah, tetapi tanda parameter tunggal dapat dikombinasikan bersama-sama ke dalam sebuah string di belakang tanda. Kombinasi yang umum digunakan adalah parameter <code>-a</code> daftar semua file, parameter <code>-i</code> ke daftar inode untuk setiap file, parameter <code>-l</code> untuk menghasilkan sepanjang daftar dan parameter <code>-s</code> untuk daftar ukuran blok dari file. Inode dari file atau direktori adalah nomor identifikasi unik kernel menetapkan setiap objek pada filesystem. Menggabungkan semua parameter ini menciptakan seseuatu yang mudah di ingat ada;ah parameter <code>-sail</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">saifulindo: ~ $ ls -sail
+total 84
+163198  4 drwxr-xr-x 11 saifulindo saifulindo  4096 Sep 12 03:00 .
+ 41545  4 drwxr-xr-x  4 root       root        4096 Aug  2 00:36 ..
+163165  8 -rw-------  1 saifulindo saifulindo  4491 Sep 12 05:41 .bash_history
+163199  4 -rw-r--r--  1 saifulindo saifulindo   220 Apr  9  2014 .bash_logout
+163200  4 -rw-r--r--  1 saifulindo saifulindo  3694 Aug  2 00:36 .bashrc
+163172  4 drwx------  2 saifulindo saifulindo  4096 Aug 15 16:28 .cache
+163240  4 drwxr-xr-x  3 saifulindo saifulindo  4096 Aug  2 00:36 .config
+163341  4 -rw-r--r--  1 saifulindo saifulindo    48 Sep  8 09:59 .gitconfig
+163167 16 drwxr-xr-x 95 saifulindo saifulindo 16384 Sep 11 13:05 .npm
+163201  4 -rw-r--r--  1 saifulindo saifulindo   675 Apr  9  2014 .profile
+163170  4 drwxr-xr-x  2 saifulindo saifulindo  4096 Sep  8 09:14 .ssh
+163599  0 -rw-r--r--  1 saifulindo saifulindo     0 Sep 12 03:00 Apalah
+163243  4 drwxr-xr-x  2 saifulindo saifulindo  4096 Aug  2 00:36 Applications
+163244  4 drwxr-xr-x  2 saifulindo saifulindo  4096 Aug  2 00:36 Backup
+163245  4 drwxr-xr-x  4 saifulindo saifulindo  4096 Sep  8 02:02 Documents
+163246  4 -rw-r--r--  1 saifulindo saifulindo  2104 Aug  2 00:36 README.md
+163247  4 drwxr-xr-x  6 saifulindo saifulindo  4096 Sep 11 15:32 Web
+163365  4 drwxr-xr-x  3 saifulindo saifulindo  4096 Sep 11 13:05 tmp
+</code></pre></div>
+  </article>
+
+  <div align="center">
+  	<a href="#">
+  	<i class="fa fa-arrow-circle-up fa-2x"></i>
+  	</a>
+  </div>
+
+</div>
+      </div>
+    </div>
+
+    <div class="footer" align="center">
+
+  Copyleft &copy; <a href=http://saifulindo.github.io target="_blank">Muhammad Syaiful</a> 2015<BR />
+  Powered by <a href=http://jekyllrb.com target="_blank">Jekyll</a>
+
+</div>
+
+
+  </body>
+</html>

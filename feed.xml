@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Belajar Linux</title>
+    <description>Belajar Terminal Linux pada materi sistem operasi berbasis text.
+</description>
+    <link>http://saifulindo.github.io/belajar-linux/</link>
+    <atom:link href="http://saifulindo.github.io/belajar-linux/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 07 Nov 2015 03:49:02 +0700</pubDate>
+    <lastBuildDate>Sat, 07 Nov 2015 03:49:02 +0700</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Basic Bash Shell Command</title>
+        <description>&lt;h3&gt;The Shell&lt;/h3&gt;
+
+&lt;p&gt;Shell GNU/Linux adalah utilitas interaktif khusus. ini menyediakan cara bagi pengguna untuk memulai program, mengelola file pada filesystem, dan mengelola proses yang berjalan pada sistem Linux. Inti dari shell adalah command prompt. Command prompt adalah bagian interaktif shell. Hal ini memungkinkan Anda untuk memasukkan perintah teks, dan kemudian menterjemahkan perintah dan mengeksekusi mereka dalam kernel.&lt;/p&gt;
+
+&lt;p&gt;Shell berisi seperangkat perintah internal yang Anda gunakan untuk mengendalikan hal-hal seperti menyalin file, memindahkan file, mengubah nama file, menampilkan program-program yang sedang berjalan pada sistem, dan menghentikan program berjalan pada sistem. Selain perintah internal, shell juga memungkinkan Anda untuk memasukkan nama dari sebuah program pada command prompt.&lt;/p&gt;
+
+&lt;h3&gt;Basic Listing&lt;/h3&gt;
+
+&lt;p&gt;Perintah &lt;code&gt;ls&lt;/code&gt; pada bentuk paling dasar menampilkan file dan direktori yang terletak di direktori saat ini:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;saifulindo: ~ $ ls
+Applications  Backup  Documents  README.md  Web  tmp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Perhatikan bahwa perintah &lt;code&gt;ls&lt;/code&gt; menghasilkan daftar urutan abjad (di kolom daripada baris). &lt;/p&gt;
+
+&lt;p&gt;Anda dapat menggunakan parameter -F dengan perintah &lt;code&gt;ls&lt;/code&gt; membedakan antara file dan direktori. Menggunakan parameter -F menghasilkan output berikut:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;saifulindo: ~ $ ls -F
+Applications/  Backup/  Documents/  README.md  Web/  tmp/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Parameter &lt;code&gt;-F&lt;/code&gt; tersebut adalah flags direktori dengan sebuah slash, untuk membantu mengidentifikasi mereka dalam daftar. Demikian pula, itu flags file yang dapat dieksekusi (seperti direktori &lt;code&gt;Web&lt;/code&gt; di atas) dengan tanda garing, untuk membantu Anda lebih mudah menemukan berkas yang dapat dijalankan pada sistem.Di Linux, file tersembunyi adalah file dengan nama file yang dimulai dengan periode, File-file ini tidak muncul dalam default daftar &lt;code&gt;ls&lt;/code&gt;(dengan demikian, mereka disebut hidden).&lt;/p&gt;
+
+&lt;p&gt;Untuk menampilkan file hidden beserta dengan normal file dan direktori, gunakan parameter &lt;code&gt;-a&lt;/code&gt;. Gambar ini menunjukkan contoh penggunaan parameter &lt;code&gt;-a&lt;/code&gt; dengan perintah &lt;code&gt;ls&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/belajar-linux/resources/img/ls-a.png&quot; alt=&quot;ls-a&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Beberapa paramater lain seperti &lt;code&gt;ls -F -R&lt;/code&gt;, &lt;code&gt;ls -l&lt;/code&gt;, Anda dapat menggunakan lebih dari satu parameter pada satu waktu jika Anda ingin. Tanda parameter  ganda harus tercantum secara terpisah, tetapi tanda parameter tunggal dapat dikombinasikan bersama-sama ke dalam sebuah string di belakang tanda. Kombinasi yang umum digunakan adalah parameter &lt;code&gt;-a&lt;/code&gt; daftar semua file, parameter &lt;code&gt;-i&lt;/code&gt; ke daftar inode untuk setiap file, parameter &lt;code&gt;-l&lt;/code&gt; untuk menghasilkan sepanjang daftar dan parameter &lt;code&gt;-s&lt;/code&gt; untuk daftar ukuran blok dari file. Inode dari file atau direktori adalah nomor identifikasi unik kernel menetapkan setiap objek pada filesystem. Menggabungkan semua parameter ini menciptakan seseuatu yang mudah di ingat ada;ah parameter &lt;code&gt;-sail&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;saifulindo: ~ $ ls -sail
+total 84
+163198  4 drwxr-xr-x 11 saifulindo saifulindo  4096 Sep 12 03:00 .
+ 41545  4 drwxr-xr-x  4 root       root        4096 Aug  2 00:36 ..
+163165  8 -rw-------  1 saifulindo saifulindo  4491 Sep 12 05:41 .bash_history
+163199  4 -rw-r--r--  1 saifulindo saifulindo   220 Apr  9  2014 .bash_logout
+163200  4 -rw-r--r--  1 saifulindo saifulindo  3694 Aug  2 00:36 .bashrc
+163172  4 drwx------  2 saifulindo saifulindo  4096 Aug 15 16:28 .cache
+163240  4 drwxr-xr-x  3 saifulindo saifulindo  4096 Aug  2 00:36 .config
+163341  4 -rw-r--r--  1 saifulindo saifulindo    48 Sep  8 09:59 .gitconfig
+163167 16 drwxr-xr-x 95 saifulindo saifulindo 16384 Sep 11 13:05 .npm
+163201  4 -rw-r--r--  1 saifulindo saifulindo   675 Apr  9  2014 .profile
+163170  4 drwxr-xr-x  2 saifulindo saifulindo  4096 Sep  8 09:14 .ssh
+163599  0 -rw-r--r--  1 saifulindo saifulindo     0 Sep 12 03:00 Apalah
+163243  4 drwxr-xr-x  2 saifulindo saifulindo  4096 Aug  2 00:36 Applications
+163244  4 drwxr-xr-x  2 saifulindo saifulindo  4096 Aug  2 00:36 Backup
+163245  4 drwxr-xr-x  4 saifulindo saifulindo  4096 Sep  8 02:02 Documents
+163246  4 -rw-r--r--  1 saifulindo saifulindo  2104 Aug  2 00:36 README.md
+163247  4 drwxr-xr-x  6 saifulindo saifulindo  4096 Sep 11 15:32 Web
+163365  4 drwxr-xr-x  3 saifulindo saifulindo  4096 Sep 11 13:05 tmp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Fri, 11 Sep 2015 00:00:00 +0700</pubDate>
+        <link>http://saifulindo.github.io/belajar-linux/2015/09/11/perintah-dasar.html</link>
+        <guid isPermaLink="true">http://saifulindo.github.io/belajar-linux/2015/09/11/perintah-dasar.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Clustering 2 Node with ProxmoxVE-v3.4</title>
+        <description>&lt;h2&gt;Documentation&lt;/h2&gt;
+
+&lt;h4&gt;Mengganti Hostname&lt;/h4&gt;
+
+&lt;p&gt;Buka file &lt;code&gt;hostanme&lt;/code&gt; di &lt;code&gt;/etc/hostname&lt;/code&gt; ganti nama hostname-nya misalnya, yang tadinya &lt;code&gt;pve&lt;/code&gt; diganti dengan &lt;code&gt;nodecomp1&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;# nano /etc/hostname
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kemudian buka file &lt;code&gt;hosts&lt;/code&gt; di &lt;code&gt;/etc/hosts&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;nano /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Rubah seperti berikut,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;127.0.0.1 localhost.localdomain localhost
+192.168.100.11 pve.cahunp.lan pve pvelocalhost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ganti menjadi,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;127.0.0.1 localhost.localdomain localhost
+192.168.100.11 nodecomp1.cahunp.lan nodecomp1 pvelocalhost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kemudian lakukan penggandaan file atau mengganti nama file pve-lama ke pve-baru:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /etc/pve/nodes/
+mv pve-lama pve-baru
+reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Insert antar hostname:&lt;/h4&gt;
+
+&lt;p&gt;Lakukan insert antar hostname, ini dilakuan opsional karena bisa menggunakan ip untuk clustering-nya. akan tetapi ini dilakukan untuk memudahkan konfigurasi, jadi yang dihafal adalah hostname-nya bukan ip address, yah... bisa dibilang untuk mengurangi stress.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;nano /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Edit seperti berikut,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;127.0.0.1 localhost.localdomain localhost
+192.168.100.11 nodecomp1.serveroke.com nodecomp1 pvelocalhost
+
+Tambahannya:
+192.168.100.21 nodecomp2.serveroke.com nodecomp2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Begitupula, sebaliknya dilakukan di node yang lain.
+Berikutnya adalah ping antar hostname:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;ping &amp;lt;hostname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Clustering&lt;/h4&gt;
+
+&lt;p&gt;Yang pertama adalah membuat sebuah ID cluster, dengan menentukan salah satu node sebagai master dan node yang lain adalah slave,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;pvecm create nodecomp1cluster [master]
+pvecm add nodecomp2 [Slave]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Setelah itu anda akan diminta untuk memasukkan passwordnya &lt;code&gt;nodecomp2&lt;/code&gt;, maka yang terjadi kedua node akan saling terbaca satu sama lain.&lt;/p&gt;
+
+&lt;p&gt;Selanjutnya mungkin kearah konfigurasi melalui WebGUI.&lt;/p&gt;
+
+&lt;h4&gt;Source&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://tutorial4itindonesia.blogspot.co.id/2015/01/membuat-cluster-pada-proxmox-32-4.html&quot;&gt;http://tutorial4itindonesia.blogspot.co.id/2015/01/membuat-cluster-pada-proxmox-32-4.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=tTy9axM1jT0&quot;&gt;https://www.youtube.com/watch?v=tTy9axM1jT0&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 10 Sep 2015 00:00:00 +0700</pubDate>
+        <link>http://saifulindo.github.io/belajar-linux/2015/09/10/clustering-proxmox3.2.html</link>
+        <guid isPermaLink="true">http://saifulindo.github.io/belajar-linux/2015/09/10/clustering-proxmox3.2.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

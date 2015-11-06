@@ -12,20 +12,24 @@ Buka file `hostanme` di `/etc/hostname` ganti nama hostname-nya misalnya, yang t
 ```
 # nano /etc/hostname
 ```
+
 Kemudian buka file `hosts` di `/etc/hosts`:
 ```
 nano /etc/hosts
 ```
+
 Rubah seperti berikut,
 ```
 127.0.0.1 localhost.localdomain localhost
-192.168.100.11 pve.serveroke.com pve pvelocalhost
+192.168.100.11 pve.cahunp.lan pve pvelocalhost
 ```
+
 Ganti menjadi,
 ```
 127.0.0.1 localhost.localdomain localhost
-192.168.100.11 nodecomp1.serveroke.com nodecomp1 pvelocalhost
+192.168.100.11 nodecomp1.cahunp.lan nodecomp1 pvelocalhost
 ```
+
 Kemudian lakukan penggandaan file atau mengganti nama file pve-lama ke pve-baru:
 ```
 # cd /etc/pve/nodes/
@@ -38,24 +42,29 @@ Lakukan insert antar hostname, ini dilakuan opsional karena bisa menggunakan ip 
 ```
 # nano /etc/hosts
 ```
+
 Edit seperti berikut,
 ```
 127.0.0.1 localhost.localdomain localhost
 192.168.100.11 nodecomp1.serveroke.com nodecomp1 pvelocalhost
+
 # Tambahannya
 192.168.100.21 nodecomp2.serveroke.com nodecomp2
 ```
+
 Begitupula, sebaliknya dilakukan di node yang lain.
 Berikutnya adalah ping antar hostname:
 ```
 # ping <hostname>
 ```
+
 #### Clustering
 Yang pertama adalah membuat sebuah ID cluster, dengan menentukan salah satu node sebagai master dan node yang lain adalah slave,
 ```
 pvecm create nodecomp1cluster [master]
 pvecm add nodecomp2 [Slave]
 ```
+
 Setelah itu anda akan diminta untuk memasukkan passwordnya `nodecomp2`, maka yang terjadi kedua node akan saling terbaca satu sama lain.
 
 Selanjutnya mungkin kearah konfigurasi melalui WebGUI.

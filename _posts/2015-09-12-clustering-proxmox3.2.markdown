@@ -61,5 +61,5 @@ Setelah itu anda akan diminta untuk memasukkan passwordnya `nodecomp2`, maka yan
 Selanjutnya mungkin kearah konfigurasi melalui WebGUI.
 
 #### Source
-1. [http://tutorial4itindonesia.blogspot.co.id/2015/01/membuat-cluster-pada-proxmox-32-4.html]http://tutorial4itindonesia.blogspot.co.id/2015/01/membuat-cluster-pada-proxmox-32-4.html
-2. [https://www.youtube.com/watch?v=tTy9axM1jT0]https://www.youtube.com/watch?v=tTy9axM1jT0
+1. [http://tutorial4itindonesia.blogspot.co.id/2015/01/membuat-cluster-pada-proxmox-32-4.html] http://tutorial4itindonesia.blogspot.co.id/2015/01/membuat-cluster-pada-proxmox-32-4.html
+2. [https://www.youtube.com/watch?v=tTy9axM1jT0] https://www.youtube.com/watch?v=tTy9axM1jT0

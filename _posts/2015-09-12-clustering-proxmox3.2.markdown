@@ -59,3 +59,7 @@ pvecm add nodecomp2 [Slave]
 Setelah itu anda akan diminta untuk memasukkan passwordnya `nodecomp2`, maka yang terjadi kedua node akan saling terbaca satu sama lain.
 
 Selanjutnya mungkin kearah konfigurasi melalui WebGUI.
+
+#### Source
+[1] http://tutorial4itindonesia.blogspot.co.id/2015/01/membuat-cluster-pada-proxmox-32-4.html
+[2] https://www.youtube.com/watch?v=tTy9axM1jT0

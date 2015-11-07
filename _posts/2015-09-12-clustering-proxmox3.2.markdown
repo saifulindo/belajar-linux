@@ -11,7 +11,7 @@ categories:
 Buka file `hostanme` di `/etc/hostname` ganti nama hostname-nya misalnya, yang tadinya `pve` diganti dengan `nodecomp1`.
 
 ```
-# nano /etc/hostname
+nano /etc/hostname
 ```
 
 Kemudian buka file `hosts` di `/etc/hosts`:
